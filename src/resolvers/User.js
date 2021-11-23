@@ -12,7 +12,7 @@ const User = {
   Mutation: {
     async addUser (
       parent,
-      { email, password, firstName, lastName, gender, doa, groups, flames }
+      { email, password, firstName, lastName, gender, doa, number, groups, flames }
     ) {
       const user = await UserModel.create({
         email,
@@ -21,6 +21,7 @@ const User = {
         lastName, 
         gender,
         doa, 
+        number,
         groups,
         flames
       })
@@ -28,11 +29,11 @@ const User = {
     },
     async updateUser (
       parent, 
-      { _id,  email, password, firstName, lastName, gender, doa, groups, flames }
+      { _id,  email, password, firstName, lastName, gender, doa, number, groups, flames }
     ) {
       const user = await UserModel.findOneAndUpdate(
         { _id },
-        { _id,  email, password, firstName, lastName, gender, doa, groups, flames },
+        { _id,  email, password, firstName, lastName, gender, doa, number, groups, flames },
         { new: true }
       )
       return user
