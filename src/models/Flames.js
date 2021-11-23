@@ -4,42 +4,42 @@ const { Schema } = mongoose
 const locations = new Schema({
   lat: {
     type: Number,
-    required: true 
+    required: false 
   },
   long: {
     type: Number,
-    required: true 
+    required: false 
   },
   base: {
     type: Number,
-    required: true 
+    required: false 
   }
 })
 
 const Flames = new Schema({
   name: {
     type: String,
-    required: true
+    required: false
   },
   meetingOrigin: {
     type: String,
-    required: true
+    required: false
   },
   hot: {
     type: Number,
-    required: true
+    required: false
   },
   crazy: {
     type: Number,
-    required: true
+    required: false
   },
   regret: {
     type: Number,
-    required: true
+    required: false
   },
   involvement: {
     type: Number,
-    required: true
+    required: false
   },
   talkingTime: {
     type: Number,
@@ -47,11 +47,11 @@ const Flames = new Schema({
   },
   physicalAltercations: {
     type: [Number],
-    required: true
+    required: false
   }, 
   timeLine: {
     type: [String],
-    required: true
+    required: false
   }, 
   locations: {
     type: [locations],

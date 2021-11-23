@@ -15,39 +15,39 @@ const User = gql`
   }
 
   type flames {
-    name: String!
-    meetingOrigin: String!
-    hot: Float!
-    crazy: Float!
-    regret: Float!
-    involvement: Float!
+    name: String
+    meetingOrigin: String
+    hot: Float
+    crazy: Float
+    regret: Float
+    involvement: Float
     talkingTime: Float
-    physicalAltercations: [Int]!
-    timeLine: [String]!
+    physicalAltercations: [Int]
+    timeLine: [String]
     locations: [locations]
   }
   type locations {
-    lat: Float!
-    long: Float!
-    base: Int!
+    lat: Float
+    long: Float
+    base: Int
   }
   
   input flamesInput {
-    name: String!
-    meetingOrigin: String!
-    hot: Float!
-    crazy: Float!
-    regret: Float!
-    involvement: Float!
+    name: String
+    meetingOrigin: String
+    hot: Float
+    crazy: Float
+    regret: Float
+    involvement: Float
     talkingTime: Int
-    physicalAltercations: [Int]!
-    timeLine: [String]!
+    physicalAltercations: [Int]
+    timeLine: [String]
     locations: [locationsInput]
   }
   input locationsInput {
-    lat: Float!
-    long: Float!
-    base: Int!
+    lat: Float
+    long: Float
+    base: Int
   }
 
   extend type Query {
@@ -63,6 +63,8 @@ const User = gql`
       gender: String
       doa: String!
       number: String!
+      groups: [Int]
+      flames: [flamesInput]
     ): User!
     updateUser(
       _id: ID!
