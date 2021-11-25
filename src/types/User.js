@@ -5,11 +5,11 @@ const User = gql`
     _id: ID!
     email: String!
     password: String!
-    firstName: String!
-    lastName: String!
+    firstName: String
+    lastName: String
     gender: String
-    doa: String!
-    number: String!
+    doa: String
+    number: String
     groups: [Int]
     flames: [flames]
   }
@@ -58,11 +58,11 @@ const User = gql`
     addUser(
       email: String!
       password: String!
-      firstName: String!
-      lastName: String!
+      firstName: String
+      lastName: String
       gender: String
-      doa: String!
-      number: String!
+      doa: String
+      number: String
       groups: [Int]
       flames: [flamesInput]
     ): User!
@@ -70,11 +70,11 @@ const User = gql`
       _id: ID!
       email: String!
       password: String!
-      firstName: String!
-      lastName: String!
+      firstName: String
+      lastName: String
       gender: String
-      doa: String!
-      number: String!
+      doa: String
+      number: String
       groups: [Int]
       flames: [flamesInput]
     ): User!
