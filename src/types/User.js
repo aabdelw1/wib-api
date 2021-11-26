@@ -59,6 +59,10 @@ const User = gql`
       email: String!
       password: String!
     ): User!
+    logIn(
+      email: String!
+      password: String!
+    ): User!
     addUser(
       email: String!
       password: String!

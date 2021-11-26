@@ -1,0 +1,26 @@
+mutation{
+  signUp(email: "justin@gmail.com", password:"yoo"){
+    email
+    password
+  }
+}
+
+mutation{
+  updateUser(_id: "61a01ad29dcbdf5ed58e576d", firstName:"Justin", lastName:"", number:"",doa:"",groups:[], flames:[], email: "justin@gmail.com", password: "$2b$10$CQFPAKcK7Eb7pp7co9tXre7IZAOaHlzJphwjHQhk1Cauy052vj2I."){
+    firstName
+  }
+}
+
+{
+  oneUser(_id:"61a01ad29dcbdf5ed58e576d"){
+    email
+    password
+    firstName
+  }
+}
+
+mutation{
+  logIn(email:"justin@gmail.com", password:"yoo"){
+    firstName
+  }
+}

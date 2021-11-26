@@ -11,7 +11,19 @@ const User = {
     }
   },
   Mutation: {
-    // login: async (parent, {email, password})
+    logIn: async (parent, {email, password}) => {
+      const existingUser = await UserModel.findOne({ email })
+
+      if (!existingUser) {
+        throw new Error('Email not found')
+      }
+
+      const validPassword = await bcrypt.compare(password, existingUser.password)
+      if(!validPassword){
+        throw new Error('Password is incorrect')
+      }
+      return existingUser
+    },
 
     signUp: async (parent, { email, password }) => {
       const existingUser = await UserModel.findOne({ email })
