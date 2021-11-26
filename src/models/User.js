@@ -13,11 +13,11 @@ const User = new Schema({
   },
   firstName: {
     type: String,
-    required: true
+    required: false
   },
   lastName: {
     type: String,
-    required: true
+    required: false
   },
   gender: {
     type: String,
@@ -25,11 +25,11 @@ const User = new Schema({
   },
   doa: {
     type: String,
-    required: true
+    required: false
   },
   number: {
     type: String,
-    required: true
+    required: false
   },
   groups: {
     type: [Number],

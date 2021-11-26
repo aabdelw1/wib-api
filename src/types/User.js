@@ -55,6 +55,10 @@ const User = gql`
     oneUser(_id: ID!): User
   }
   extend type Mutation {
+    signUp(
+      email: String!
+      password: String!
+    ): User!
     addUser(
       email: String!
       password: String!

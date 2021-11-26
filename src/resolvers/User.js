@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt')
 const UserModel = require('../models/User')
 
 const User = {
@@ -10,6 +11,25 @@ const User = {
     }
   },
   Mutation: {
+    // login: async (parent, {email, password})
+
+    signUp: async (parent, { email, password }) => {
+      const existingUser = await UserModel.findOne({ email })
+
+      if (existingUser) {
+        throw new Error('Email already in use')
+      }
+
+      const hash = await bcrypt.hash(password, 10)
+      await UserModel.create({
+        email,
+        password: hash
+      })
+      const user = await UserModel.findOne({ email })
+
+      return user
+    },
+
     async addUser (
       parent,
       { email, password, firstName, lastName, gender, doa, number, groups, flames }
